@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubre El Salvador | Turismo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR (Flexbox) -->
+  <header class="navbar">
+    <div class="logo">🇸🇻 El Salvador Turismo</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#info">Información</a>
+      <button id="theme-toggle" class="btn-theme" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menú">☰</button>
+  </header>
+
+  <!-- HERO / BANNER (Flexbox) -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Descubre la magia de El Salvador</h1>
+      <p>Playas, volcanes, cultura y aventura en el corazón de Centroamérica</p>
+      <button class="btn-primary" onclick="document.getElementById('destinos').scrollIntoView({behavior: 'smooth'})">
+        Explorar Destinos
+      </button>
+    </div>
+  </section>
+
+  <!-- GALERÍA (CSS Grid) -->
+  <section class="gallery" id="destinos">
+    <h2>Destinos Destacados</h2>
+    <div class="grid-container">
+      <!-- Tarjeta 1 -->
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://media.diariolahuella.com/wp-content/uploads/2025/04/04094044/WhatsApp-Image-2024-09-17-at-8.32.33-PM.jpg')"></div>
+        <div class="card-content">
+          <h3>Surf City</h3>
+          <p>Olas de clase mundial en la costa del Pacífico.</p>
+          <button class="btn-card" data-destino="Surf City">Ver más</button>
+        </div>
+      </div>
+      <!-- Tarjeta 2 -->
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://elsalvador.travel/system/wp-content/uploads/2024/08/izalco-01.jpg')"></div>
+        <div class="card-content">
+          <h3>Volcán de Izalco</h3>
+          <p>El "Faro del Pacífico" con vistas espectaculares.</p>
+          <button class="btn-card" data-destino="Volcán de Izalco">Ver más</button>
+        </div>
+      </div>
+      <!-- Tarjeta 3 -->
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0f/6c/e2/df.jpg')"></div>
+        <div class="card-content">
+          <h3>Ruta de las Flores</h3>
+          <p>Pueblos mágicos, café y tradiciones vivas.</p>
+          <button class="btn-card" data-destino="Ruta de las Flores">Ver más</button>
+        </div>
+      </div>
+      <!-- Tarjeta 4 -->
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://elsalvador.travel/system/wp-content/uploads/2020/01/Sitio-Arqueolo%CC%81gico-San-Andre%CC%81s-3.jpg')"></div>
+        <div class="card-content">
+          <h3>Joya de Cerén</h3>
+          <p>Patrimonio de la Humanidad: la Pompeya americana.</p>
+          <button class="btn-card" data-destino="Joya de Cerén">Ver más</button>
+        </div>
+      </div>
+      <!-- Tarjeta 5 -->
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://elsalvador.travel/system/wp-content/uploads/2024/08/lagocoatepeque-01.jpg')"></div>
+        <div class="card-content">
+          <h3>Lago de Coatepeque</h3>
+          <p>Aguas cristalinas en una caldera volcánica.</p>
+          <button class="btn-card" data-destino="Lago de Coatepeque">Ver más</button>
+        </div>
+      </div>
+      <!-- Tarjeta 6 -->
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://media.tacdn.com/media/attractions-splice-spp-674x446/0f/6f/7a/f0.jpg')"></div>
+        <div class="card-content">
+          <h3>Suchitoto</h3>
+          <p>Historia colonial, arte y ecoturismo.</p>
+          <button class="btn-card" data-destino="Suchitoto">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN (Flexbox con flex-wrap) -->
+  <section class="info" id="info">
+    <h2>Información del País</h2>
+    <div class="info-container">
+      <div class="info-col">
+        <h3>🌍 Capital</h3>
+        <p>San Salvador</p>
+      </div>
+      <div class="info-col">
+        <h3>🗣️ Idioma</h3>
+        <p>Español</p>
+      </div>
+      <div class="info-col">
+        <h3>💵 Moneda</h3>
+        <p>Dólar Estadounidense (USD)</p>
+      </div>
+      <div class="info-col">
+        <h3>⛰️ Clima</h3>
+        <p>Tropical, con estación seca y lluviosa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Flexbox) -->
+  <footer>
+    <p>&copy; 2026 Turismo El Salvador. Proyecto Curso Transformación Digital para la Docencia Técnica.</p>
+  </footer>
+
+  <!-- MODAL INTERACTIVO -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc">Información turística ampliada sobre este destino...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
